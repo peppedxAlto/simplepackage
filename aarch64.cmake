@@ -23,3 +23,13 @@ set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 # Search headers and libraries in the target environment only.
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+
+# Specify the target file system
+set(CMAKE_SYSROOT /home/giellamo/roots)
+
+# This assumes that pthread will be available on the target system
+# (this emulates that the return of the TRY_RUN is a return code "0")
+set(THREADS_PTHREAD_ARG "0"
+  CACHE STRING "Result from TRY_RUN" FORCE)
